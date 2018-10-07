@@ -15,3 +15,9 @@
  :stuck_out_tongue:
 
 ## Zmiany w pliku do zacommitowania w GIT
+
+# Kolejne zmiany w pliku do dodania
+ale nie wiem dlaczego nie widac zmian
+
+
+lorem ipsum
