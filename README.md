@@ -26,3 +26,5 @@ lorem ipsum
 
  :ok_hand:
  Piata wersja
+
+ Wersja dla brancha eksperyment
