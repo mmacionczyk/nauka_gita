@@ -23,3 +23,6 @@ ale nie wiem dlaczego nie widac zmian
 lorem ipsum
 
 #Cwiczenia w commitowaniu i pushowaniu do GITa
+
+ :ok_hand:
+ Piata wersja
