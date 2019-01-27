@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190127 13:00:32.638" generator="Robot 3.1.1 (Python 2.7.15rc1 on linux2)">
+<suite source="/home/tester/robot/dysk/proba.robot" id="s1" name="Proba">
+<test id="s1-t1" name="Loggin Testing">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Hello, tester!</arg>
+</arguments>
+<status status="PASS" endtime="20190127 13:00:32.825" starttime="20190127 13:00:32.824"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:32.825" critical="yes" starttime="20190127 13:00:32.822"></status>
+</test>
+<test id="s1-t2" name="My log Testing">
+<kw name="my log">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Hello, tester</arg>
+</arguments>
+<status status="PASS" endtime="20190127 13:00:32.827" starttime="20190127 13:00:32.827"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:32.827" starttime="20190127 13:00:32.826"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:32.827" critical="yes" starttime="20190127 13:00:32.826"></status>
+</test>
+<test id="s1-t3" name="Testing another">
+<kw name="my log two">
+<arguments>
+<arg>${Witam}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Witam}</arg>
+</arguments>
+<status status="PASS" endtime="20190127 13:00:32.829" starttime="20190127 13:00:32.829"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:32.829" starttime="20190127 13:00:32.828"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:32.829" critical="yes" starttime="20190127 13:00:32.828"></status>
+</test>
+<test id="s1-t4" name="Testing new environment with uname">
+<kw name="Polacz sie z komputerem zdalnym">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<arguments>
+<arg>${REMOTE_HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20190127 13:00:32.831" starttime="20190127 13:00:32.831"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:32.831" starttime="20190127 13:00:32.831"></status>
+</kw>
+<kw name="Zaloguj sie uzywajac poprawnego loginu i hasla">
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<arguments>
+<arg>${REMOTE_USERNAME}</arg>
+<arg>${REMOTE_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190127 13:00:32.832" level="INFO">Logging into '127.0.0.1:22' as 'tester'.</msg>
+<msg timestamp="20190127 13:00:34.261" level="INFO">Read output: Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-43-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * MicroK8s is Kubernetes in a snap. Made by devs for devs.
+   One quick install on a workstation, VM, or appliance.
+
+   - https://bit.ly/microk8s
+
+ * Full K8s GPU support is now available!
+
+   - https://blog.ubuntu.com/2018/12/10/using-gpgpus-with-kubernetes
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+151 packages can be updated.
+0 updates are security updates.
+
+----------------------------------------------------------------
+  Ubuntu 18.04.1 LTS                          built 2018-10-04
+----------------------------------------------------------------
+Last login: Sun Jan 27 12:59:21 2019 from 127.0.0.1
+Witaj tester!
+tester@tester-m:~$</msg>
+<msg timestamp="20190127 13:00:34.262" level="INFO">/home/tester/robot/dysk/local/lib/python2.7/site-packages/paramiko/kex_ecdh_nist.py:39: CryptographyDeprecationWarning: encode_point has been deprecated on EllipticCurvePublicNumbers and will be removed in a future version. Please use EllipticCurvePublicKey.public_bytes to obtain both compressed and uncompressed point encoding.
+  m.add_string(self.Q_C.public_numbers().encode_point())
+/home/tester/robot/dysk/local/lib/python2.7/site-packages/paramiko/kex_ecdh_nist.py:96: CryptographyDeprecationWarning: Support for unsafe construction of public numbers from encoded data will be removed in a future version. Please use EllipticCurvePublicKey.from_encoded_point
+  self.curve, Q_S_bytes
+/home/tester/robot/dysk/local/lib/python2.7/site-packages/paramiko/kex_ecdh_nist.py:111: CryptographyDeprecationWarning: encode_point has been deprecated on EllipticCurvePublicNumbers and will be removed in a future version. Please use EllipticCurvePublicKey.public_bytes to obtain both compressed and uncompressed point encoding.
+  hm.add_string(self.Q_C.public_numbers().encode_point())</msg>
+<status status="PASS" endtime="20190127 13:00:34.263" starttime="20190127 13:00:32.832"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:34.263" starttime="20190127 13:00:32.832"></status>
+</kw>
+<kw name="Wpisz komende i sprawdz czy jest poprawna">
+<kw name="Execute Command" library="SSHLibrary">
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<arguments>
+<arg>uname -a</arg>
+</arguments>
+<assign>
+<var>${uname}</var>
+</assign>
+<msg timestamp="20190127 13:00:34.267" level="INFO">Executing command 'uname -a'.</msg>
+<msg timestamp="20190127 13:00:34.282" level="INFO">Command exited with return code 0.</msg>
+<msg timestamp="20190127 13:00:34.283" level="INFO">${uname} = Linux tester-m 4.15.0-43-generic #46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux</msg>
+<status status="PASS" endtime="20190127 13:00:34.283" starttime="20190127 13:00:34.266"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${uname}</arg>
+</arguments>
+<msg timestamp="20190127 13:00:34.283" level="INFO">Length is 106</msg>
+<status status="PASS" endtime="20190127 13:00:34.283" starttime="20190127 13:00:34.283"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${uname}</arg>
+<arg>Linux</arg>
+</arguments>
+<status status="PASS" endtime="20190127 13:00:34.284" starttime="20190127 13:00:34.284"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:34.284" starttime="20190127 13:00:34.264"></status>
+</kw>
+<kw name="Zamknij polaczenie">
+<kw name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20190127 13:00:34.350" starttime="20190127 13:00:34.284"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:34.350" starttime="20190127 13:00:34.284"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:34.350" critical="yes" starttime="20190127 13:00:32.830"></status>
+</test>
+<test id="s1-t5" name="Loggin Testing to wp.pl in Firefox Browsing">
+<kw name="Otworz przegladarke">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://www.wp.pl</arg>
+</arguments>
+<msg timestamp="20190127 13:00:34.353" level="INFO">Opening browser 'firefox' to base url 'http://www.wp.pl'.</msg>
+<status status="PASS" endtime="20190127 13:00:38.394" starttime="20190127 13:00:34.353"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:38.395" starttime="20190127 13:00:34.352"></status>
+</kw>
+<kw name="Wybierz zakladke poczta">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>https://poczta.wp.pl</arg>
+</arguments>
+<msg timestamp="20190127 13:00:38.398" level="INFO">Opening url 'https://poczta.wp.pl'</msg>
+<status status="PASS" endtime="20190127 13:00:39.718" starttime="20190127 13:00:38.398"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:39.719" starttime="20190127 13:00:38.396"></status>
+</kw>
+<kw name="Wprowadz poprawny login">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_wp}</arg>
+<arg>${user_wp}</arg>
+</arguments>
+<msg timestamp="20190127 13:00:39.720" level="INFO">Typing text 'testerwsb_t1' into text field '//*[@id="login"]'.</msg>
+<status status="PASS" endtime="20190127 13:00:39.771" starttime="20190127 13:00:39.719"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:39.772" starttime="20190127 13:00:39.719"></status>
+</kw>
+<kw name="Wprowadz poprawne haslo">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${password_wp}</arg>
+<arg>${password_wp_valid}</arg>
+</arguments>
+<msg timestamp="20190127 13:00:39.773" level="INFO">Typing text 'adam1234' into text field '//*[@id="password"]'.</msg>
+<status status="PASS" endtime="20190127 13:00:39.807" starttime="20190127 13:00:39.772"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:39.808" starttime="20190127 13:00:39.772"></status>
+</kw>
+<kw name="Wybierz przycisk zaloguj">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${login_button}</arg>
+</arguments>
+<msg timestamp="20190127 13:00:39.810" level="INFO">Clicking button '//*[@id="btnSubmit"]'.</msg>
+<status status="PASS" endtime="20190127 13:00:46.661" starttime="20190127 13:00:39.810"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:46.661" starttime="20190127 13:00:39.809"></status>
+</kw>
+<kw name="Sprawdz poprawnosc zalogowania">
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Odebrane</arg>
+</arguments>
+<msg timestamp="20190127 13:00:46.732" level="INFO">Current page contains text 'Odebrane'.</msg>
+<status status="PASS" endtime="20190127 13:00:46.732" starttime="20190127 13:00:46.662"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:46.733" starttime="20190127 13:00:46.661"></status>
+</kw>
+<kw name="Zamknij przegladarke">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20190127 13:00:47.420" starttime="20190127 13:00:46.733"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:47.420" starttime="20190127 13:00:46.733"></status>
+</kw>
+<status status="PASS" endtime="20190127 13:00:47.420" critical="yes" starttime="20190127 13:00:34.351"></status>
+</test>
+<status status="PASS" endtime="20190127 13:00:47.421" starttime="20190127 13:00:32.639"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="5">Critical Tests</stat>
+<stat fail="0" pass="5">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Proba" pass="5">Proba</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
